@@ -1,4 +1,0 @@
-rootProject.name = 'restds-compat'
-
-includeBuild 'service-app'
-includeBuild 'client-app'
