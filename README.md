@@ -10,4 +10,6 @@ The Client app uses the standard `restds_RestPasswordAuthenticator`, but custom 
 
 The [IntegrationInitializer](client-app/src/main/java/com/company/clientapp/security/IntegrationInitializer.java) class authenticates in the Service on the Client application start using the "integration user" credentials obtained from the environment.
 
+Jmix 1.x uses non-standard path for obtaining tokens, so the Client includes the following property: `serviceapp.tokenPath=/oauth/token`
+
 The `jmix.restds.authentication-provider-store` property that provides authentication of the current user in the service must not be present the environment.
