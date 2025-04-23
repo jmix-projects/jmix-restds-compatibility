@@ -13,3 +13,5 @@ The [IntegrationInitializer](client-app/src/main/java/com/company/clientapp/secu
 Jmix 1.x uses non-standard path for obtaining tokens, so the Client includes the following property: `serviceapp.tokenPath=/oauth/token`
 
 The `jmix.restds.authentication-provider-store` property that provides authentication of the current user in the service must not be present the environment.
+
+ATTENTION: open `client-app` and `service-app` folders as separate projects in the IDE. Due to different Jmix versions they cannot work in a single composite project.
