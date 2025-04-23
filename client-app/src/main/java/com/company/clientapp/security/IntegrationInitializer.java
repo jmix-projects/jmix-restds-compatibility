@@ -12,10 +12,10 @@ public class IntegrationInitializer {
     @Value("${integration.store}")
     private String integrationStore;
 
-    @Value("${integration.user}")
+    @Value("${integration.user.username}")
     private String integrationUser;
 
-    @Value("${integration.password}")
+    @Value("${integration.user.password}")
     private String integrationPassword;
 
     @EventListener
