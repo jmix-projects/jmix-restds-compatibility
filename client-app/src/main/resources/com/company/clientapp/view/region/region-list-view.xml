@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <view xmlns="http://jmix.io/schema/flowui/view"
-      title="msg://customerListView.title"
-      focusComponent="customersDataGrid">
+      title="msg://regionListView.title"
+      focusComponent="regionsDataGrid">
     <data>
-        <collection id="customersDc"
-                    class="com.company.clientapp.entity.Customer"
-                    fetchPlan="customer-with-region">
-            <loader id="customersDl" readOnly="true"/>
+        <collection id="regionsDc"
+                    class="com.company.clientapp.entity.Region">
+            <loader id="regionsDl" readOnly="true"/>
         </collection>
     </data>
     <facets>
@@ -21,15 +20,15 @@
     </actions>
     <layout>
         <hbox id="buttonsPanel" classNames="buttons-panel">
-            <button id="createButton" action="customersDataGrid.createAction"/>
-            <button id="editButton" action="customersDataGrid.editAction"/>
-            <button id="removeButton" action="customersDataGrid.removeAction"/>
-            <simplePagination id="pagination" dataLoader="customersDl"/>
+            <button id="createButton" action="regionsDataGrid.createAction"/>
+            <button id="editButton" action="regionsDataGrid.editAction"/>
+            <button id="removeButton" action="regionsDataGrid.removeAction"/>
+            <simplePagination id="pagination" dataLoader="regionsDl"/>
         </hbox>
-        <dataGrid id="customersDataGrid"
+        <dataGrid id="regionsDataGrid"
                   width="100%"
                   minHeight="20em"
-                  dataContainer="customersDc"
+                  dataContainer="regionsDc"
                   columnReorderingAllowed="true">
             <actions>
                 <action id="createAction" type="list_create"/>
@@ -39,8 +38,6 @@
             <columns resizable="true">
                 <column property="version"/>
                 <column property="name"/>
-                <column property="email"/>
-                <column property="region"/>
             </columns>
         </dataGrid>
         <hbox id="lookupActions" visible="false">

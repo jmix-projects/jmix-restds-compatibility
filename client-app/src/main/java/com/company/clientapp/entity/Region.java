@@ -10,7 +10,7 @@ import java.util.UUID;
 
 @JmixEntity
 @Store(name = "serviceapp")
-public class Customer {
+public class Region {
     @JmixGeneratedValue
     @JmixId
     private UUID id;
@@ -19,26 +19,6 @@ public class Customer {
 
     @InstanceName
     private String name;
-
-    private String email;
-
-    private Region region;
-
-    public Region getRegion() {
-        return region;
-    }
-
-    public void setRegion(Region region) {
-        this.region = region;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public String getName() {
         return name;

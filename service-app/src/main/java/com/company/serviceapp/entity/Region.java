@@ -8,46 +8,21 @@ import javax.persistence.*;
 import java.util.UUID;
 
 @JmixEntity
-@Table(name = "CUSTOMER", indexes = {
-        @Index(name = "IDX_CUSTOMER_REGION", columnList = "REGION_ID")
-})
+@Table(name = "REGION")
 @Entity
-public class Customer {
+public class Region {
     @JmixGeneratedValue
-    @Column(name = "ID", nullable = false, updatable = false)
+    @Column(name = "ID", nullable = false)
     @Id
     private UUID id;
 
-    @Column(name = "VERSION", nullable = false, updatable = false)
+    @Column(name = "VERSION", nullable = false)
     @Version
     private Integer version;
 
     @InstanceName
     @Column(name = "NAME")
     private String name;
-
-    @Column(name = "EMAIL")
-    private String email;
-
-    @JoinColumn(name = "REGION_ID")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Region region;
-
-    public Region getRegion() {
-        return region;
-    }
-
-    public void setRegion(Region region) {
-        this.region = region;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public String getName() {
         return name;

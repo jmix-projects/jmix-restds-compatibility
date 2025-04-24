@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://jmix.io/schema/ui/window"
         xmlns:c="http://jmix.io/schema/ui/jpql-condition"
-        caption="msg://customerBrowse.caption"
-        focusComponent="customersTable">
+        caption="msg://regionBrowse.caption"
+        focusComponent="regionsTable">
     <data readOnly="true">
-        <collection id="customersDc"
-                    class="com.company.serviceapp.entity.Customer">
-            <fetchPlan extends="_base">
-                <property name="region" fetchPlan="_base"/>
-            </fetchPlan>
-            <loader id="customersDl">
+        <collection id="regionsDc"
+                    class="com.company.serviceapp.entity.Region">
+            <fetchPlan extends="_base"/>
+            <loader id="regionsDl">
                 <query>
-                    <![CDATA[select e from Customer e]]>
+                    <![CDATA[select e from Region e]]>
                 </query>
             </loader>
         </collection>
@@ -26,14 +24,14 @@
     </actions>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="customersTable" spacing="true">
+    <layout expand="regionsTable" spacing="true">
         <filter id="filter"
-                dataLoader="customersDl">
+                dataLoader="regionsDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="customersTable"
+        <groupTable id="regionsTable"
                     width="100%"
-                    dataContainer="customersDc">
+                    dataContainer="regionsDc">
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
@@ -41,15 +39,13 @@
             </actions>
             <columns>
                 <column id="name"/>
-                <column id="email"/>
-                <column id="region"/>
             </columns>
             <simplePagination/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="customersTable.create"/>
-                <button id="editBtn" action="customersTable.edit"/>
-                <button id="removeBtn" action="customersTable.remove"/>
+                <button id="createBtn" action="regionsTable.create"/>
+                <button id="editBtn" action="regionsTable.edit"/>
+                <button id="removeBtn" action="regionsTable.remove"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
